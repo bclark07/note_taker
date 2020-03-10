@@ -4,19 +4,29 @@
 // These data sources hold arrays of information on table-data, waitinglist, etc.
 // ===============================================================================
 
-// var tableData = require("../data/tableData");
-// var waitListData = require("../data/waitinglistData");
+var notesData = require("../db/test");
 
 // ===============================================================================
 // ROUTING
 // ===============================================================================
 
 module.exports = function(app) {
-  app.get("/api/delete", function(req, res) {
-    console.log("delete page");
+  app.get("/api/notes", function(req, res) {
+    console.log("get Notes");
+    res.json(notesData);
+  });
+
+  app.post("/api/notes", function(req, res) {
+    notesData.push(req.body);
+    res.json(notesData);
+  });
+
+  app.delete("/api/notes/:id", function(req, res) {
+    console.log("delete page"); //need delete code here - hwo get id?
+    res.json(notesData);
   });
 };
 
-//post
-//get
-//delete
+//post handleNoteSave
+//get handleNoteView, handleNewNoteView
+//delete handleNoteDelete
