@@ -3,7 +3,6 @@
 // We need to include the path package to get the correct file path for our html
 // ===============================================================================
 var path = require("path");
-// var db = require("../models"); should automatically recognize public and find the right files
 
 //routing
 // HTML GET Requests

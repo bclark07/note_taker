@@ -1,25 +1,3 @@
-//Example:
-
-// This line is the magic. It"s very similar to the standard ajax function we used.
-// Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
-// The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
-// depending on if a tables is available or not.
-
-// $.post("/api/tables", newReservation,
-//   function(data) {
-
-//     // If a table is available... tell user they are booked.
-//     if (data) {
-//       alert("Yay! You are officially booked!");
-//     }
-
-//     // If a table is available... tell user they on the waiting list.
-//     else {
-//       alert("Sorry you are on the wait list");
-//     }
-
-//   });
-
 var $noteTitle = $(".note-title");
 var $noteText = $(".note-textarea");
 var $saveNoteBtn = $(".save-note");
@@ -95,8 +73,6 @@ var handleNoteDelete = function(event) {
   var note = $(this)
     .parent(".list-group-item")
     .data();
-  console.log("js index line 96");
-  console.log(note);
   if (activeNote.id === note.id) {
     activeNote = {};
   }
